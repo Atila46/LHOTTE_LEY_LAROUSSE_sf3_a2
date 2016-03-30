@@ -1,0 +1,15 @@
+{% extends('::base.html.twig') %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block title %}
+    {{ parent() ~ ' - homepage' }}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <p>This is my home page</p>
+    {{ article.createdAt|date('d/m/Y H:i') }}
+{% endblock %}

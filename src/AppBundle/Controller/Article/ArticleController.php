@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller\Article;
 
+use AppBundle\Antispam\Antispam;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +15,24 @@ class ArticleController extends Controller
      */
     public function listAction()
     {
-        return new Response('List of article');
+        $tutorials = [
+            [
+                'id' => 2,
+                'name' => 'Symfony2'
+            ],
+            [
+                'id' => 5,
+                'name' => 'Wordpress'
+            ],
+            [
+                'id' => 9,
+                'name' => 'Laravel'
+            ],
+        ];
+
+        return $this->render('AppBundle:Article:index.html.twig', [
+            'tutorials' => $tutorials
+        ]);
     }
 
     /**
@@ -28,4 +46,30 @@ class ArticleController extends Controller
             'Affiche moi l\'article avec l\'id: '.$id.' avec le tag '.$tag
         );
     }
+
+    /**
+     * @Route("/show/{articleName}")
+     *
+     * @param $articleName
+     *
+     * @return Response
+     */
+    public function showArticleNameAction($articleName)
+    {
+        return $this->render('AppBundle:Article:index.html.twig', [
+            'articleName' => $articleName,
+        ]);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
