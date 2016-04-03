@@ -1,15 +1,16 @@
-{% extends('::base.html.twig') %}
+{% extends ('::base.html.twig') %}
 
-{% block stylesheets %}
+{% block steelsheets %}
     {{ parent() }}
 {% endblock %}
 
 {% block title %}
-    {{ parent() ~ ' - homepage' }}
+    {{ parent() ~ '- HomePage' }}
 {% endblock %}
-
 {% block body %}
     {{ parent() }}
-    <p>This is my home page</p>
-    {{ article.createdAt|date('d/m/Y H:i') }}
+    <p>Derniers articles</p>
+    {%  include('AppBundle:Article/Partial:list.html.twig') %}
+
 {% endblock %}
+

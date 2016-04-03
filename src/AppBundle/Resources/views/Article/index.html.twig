@@ -1,6 +1,8 @@
 {% extends('::base.html.twig') %}
 
+
 {% block body %}
-    <h1>Liste d'article</h1>
-    {% include('AppBundle:Article/Partial:list.html.twig') %}
+    {{ parent() }}
+    <h1>Listes d'articles</h1>
+    {%  include('AppBundle:Article/Partial:list.html.twig') %}
 {% endblock %}
