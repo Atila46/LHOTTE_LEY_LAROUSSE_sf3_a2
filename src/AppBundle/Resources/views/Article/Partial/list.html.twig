@@ -1,6 +1,6 @@
 {% for article in articles %}
     <div class="">
-        <a href="{{ path('article_show',{ 'articleSlug' : article.slug }) }}"><h2>{{ article.title }} ({{ article.id }}) </h2></a>
+        <a href="{{ path('article_show',{ 'articleSlug' : article.slug }) }}"><h2>{{ article.title }} </h2></a>
         <p>{{ article.content }}</p>
         <p>écrit le {{ article.createdAt|date('d/m/Y') }}</p>
         <ul>
