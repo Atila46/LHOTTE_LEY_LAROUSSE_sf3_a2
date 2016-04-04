@@ -50,9 +50,7 @@ class ArticleController extends Controller
     }
 
     /**
-     * @Route("/show/{articleSlug}", name="article_show")
-     *
-     * @param $articleSlug
+     * @Route("/list", name="article_show")
      *
      * @return Response
      */
@@ -61,7 +59,7 @@ class ArticleController extends Controller
         $em = $this->getDoctrine()->getManager();
         $articleRepository = $em->getRepository('AppBundle:Article\Article');
 
-        $article= $articleRepository->findOneBy(array('slug' => $articleSlug));
+        /* $article= $articleRepository->findOneBy(array('slug' => $articleSlug));  */
 
 
 
